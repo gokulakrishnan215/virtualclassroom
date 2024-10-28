@@ -3,7 +3,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import mysql.connector
 
 app = Flask(__name__)
-app.secret_key = 'temporary_key'
+app.secret_key = 'temporary_key'  # Replace this with a secure key in production
 
 def get_db_connection():
     return mysql.connector.connect(
@@ -50,7 +50,6 @@ def login():
             return 'Invalid credentials', 401
     return render_template('login.html')
 
-
 # Dashboard Route (after login)
 @app.route('/dashboard')
 def dashboard():
@@ -62,25 +61,14 @@ def dashboard():
     return render_template('dashboard.html', course_urls=course_urls)
 
 # Home Route (Landing Page)
-
 @app.route('/')
-
 def home():
-
     return render_template('home.html')
 
-
-
 # Logout
-
 @app.route('/logout')
-
 def logout():
-
     return redirect(url_for('login'))
 
-
-
 if __name__ == '__main__':
-
-    app.run(host="0.0.0.0", port=5000,debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
