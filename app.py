@@ -55,8 +55,8 @@ def login():
 @app.route('/dashboard')
 def dashboard():
     course_urls = [
-        'https://clonebucker1.s3.us-east-1.amazonaws.com/python_code.pdf',
-        'https://clonebbucket.s3.amazonaws.com/PYTHON%2BPhttps://clonebucker1.s3.us-east-1.amazonaws.com/PYTHON%2BPROGRAMMING%2BNOTES.pdf'
+        'https://clonebucket123.s3.us-east-1.amazonaws.com/python_code.pdf',
+        'https://clonebucket123.s3.us-east-1.amazonaws.com/PYTHON%2BPROGRAMMING%2BNOTES.pdf'
     ]
     
     return render_template('dashboard.html', course_urls=course_urls)
